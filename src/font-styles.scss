@@ -1,0 +1,100 @@
+// Colors
+$lightmode-bg: #d2cfc6;
+$darkmode-bg: #1D1C20;
+$lightmode-h1: #002B36;
+$lightmode-h2: #12404d;
+$lightmode-h3: #1f5361;
+$lightmode-h4: #2e6676;
+$lightmode-p: #485a5e;
+$lightmode-margin: #bfbaba;
+$lightmode-hover: #1f5361;
+
+$darkmode-h1: #CBCACF;
+$darkmode-h2: #CBCACF;
+$darkmode-h3: #CBCACF;
+$darkmode-h4: #CBCACF;
+$darkmode-p: #d7cfd4;
+$darkmode-margin: #353535;
+$darkmode-hover: #9F294C;
+
+// Fonts
+$font-primary: "Reddit Mono", monospace;
+$font-secondary: "Noto Sans", sans-serif;
+$font-light: 300;
+$font-regular: 400;
+$font-demi: 600;
+$font-bold: 700;
+
+// Font Sizes
+$font-size-base: 16px;
+$font-size-h1: 1.5rem; // 40px if $font-size-base is 16px
+$font-size-h2: 1.3rem; // 32px
+$font-size-h3: 1.2rem; // 28px
+$font-size-h4: 1.1rem; // 24px
+$font-size-paragraph: $font-size-base; // 16px
+
+// Line Heights
+$line-height: 4;
+
+// Mixins
+
+// Light Theme
+@mixin light-theme {
+    --bg-color: #{$lightmode-bg};
+    --h1-color: #{$lightmode-h1};
+    --h2-color: #{$lightmode-h2};
+    --h3-color: #{$lightmode-h3};
+    --h4-color: #{$lightmode-h4};
+    --p-color: #{$lightmode-p};
+    --margin-color: #{$lightmode-margin};
+    --bg-color-r: #{$darkmode-bg};
+    --text-hover: #{$lightmode-hover};
+}
+
+// Dark Theme
+@mixin dark-theme {
+    --bg-color: #{$darkmode-bg};
+    --h1-color: #{$darkmode-h1};
+    --h2-color: #{$darkmode-h2};
+    --h3-color: #{$darkmode-h3};
+    --h4-color: #{$darkmode-h4};
+    --p-color: #{$darkmode-p};
+    --margin-color: #{$darkmode-margin};
+    --bg-color-r: #{$lightmode-bg};
+    --text-hover: #{$darkmode-hover};
+}
+
+// Heading 1 Style
+@mixin font-heading-1 {
+    font-family: "Reddit Mono", monospace;
+    font-size: $font-size-h1;
+    font-weight: $font-bold;
+    color: var(--h1-color);
+    line-height: $font-size-h1 * 1.2;
+}
+
+// Heading 1 Style
+@mixin font-heading-2 {
+    font-family: "Reddit Mono", monospace;
+    font-size: $font-size-h2;
+    font-weight: $font-bold;
+    color: var(--h2-color);
+    line-height: $font-size-h2 * 1.2;
+}
+
+// Paragraph Style
+@mixin font-paragraph {
+    font-family: "Noto sans", sans-serif;
+    font-size: $font-size-paragraph;
+    font-weight: $font-regular;
+    color: var(--p-color);
+    line-height: $font-size-paragraph * 1.6;
+}
+
+:root {
+    @include light-theme;
+}
+
+:root .dark-theme {
+    @include dark-theme;
+}

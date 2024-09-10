@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+}
+
+.project__p, .project__h {
+    padding-left: 40px;
+}
+
+@media (max-width: 1024px) and (min-width: 769px)  {
+
+        span .project {
+            display: flex;
+            align-items: center;
+        }
+}

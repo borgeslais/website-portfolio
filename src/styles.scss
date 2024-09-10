@@ -1,1 +1,460 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "font-styles";
+@import "scrollbar";
+
+.light-theme {
+    @include light-theme;
+}
+
+.dark-theme {
+    @include dark-theme;
+}
+
+body.light-mode {
+    @include light-theme;
+}
+
+body.dark-mode {
+    @include dark-theme;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+h1 {
+    @include font-heading-1;
+}
+
+h2 {
+    @include font-heading-2;
+}
+
+p {
+    @include font-paragraph;
+}
+
+li {
+    @include font-heading-2;
+    list-style: none;
+    padding-left: none;
+}
+
+.flex {
+    display: flex;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--h4-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--bg-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--h4-color);
+}
+
+input:focus+.slider {
+    box-shadow: inset 2px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+.slider.round {
+    border-radius: 34px;
+    box-shadow: inset 2px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Centers horizontally */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+.container {
+    justify-content: center;
+}
+
+.navbar {
+    height: 100vh;
+    /* Full viewport height */
+    overflow-y: auto;
+    /* Add scrollbar if needed */
+    position: fixed;
+    /* Fixes the navbar to the left side */
+    top: 0;
+    left: 0;
+    z-index: 99;
+    /* Ensure it's on top of other content */
+    width: 300px;
+    background-color: var(--bg-color);
+    border-right: 0.8px solid var(--margin-color);
+    display: flex;
+    justify-content: center;
+    // margin: 20px 20px 20px 20px;
+    // border-radius: 16px;
+
+    &-nav {
+        display: inline-block;
+        // text-align: center;
+        padding: 0;
+
+        .p-photo {
+            margin-bottom: 16px;
+        }
+
+        .links {
+            padding-top: 8px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            &_link {
+                padding: 0 8px;
+            }
+
+            &__small {
+                width: 120px;
+                margin: auto;
+            }
+
+
+        }
+    }
+}
+
+
+.h-center {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.main-content {
+    padding: 0;
+    justify-content: left;
+    margin-left: 340px;
+    margin-right: 24px;
+    margin-top: 40px;
+}
+
+nav {
+    ul {
+        list-style-type: none;
+    }
+
+    .about {
+        margin-top: 16px;
+
+        .navbar-brand {
+            @include font-heading-1;
+            font-size: 16px;
+        }
+
+        span {
+            @include font-paragraph;
+            font-size: 14px;
+        }
+
+        // display: flex;
+        // flex-direction: column;
+    }
+
+    .tech {
+        margin-top: 24px;
+
+        .nav-item {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--h1-color);
+            text-transform: uppercase;
+            padding: 4px 0;
+
+            &:hover {
+                color: var(--text-hover);
+            }
+
+            &:active {
+                color: var(--text-hover);
+            }
+
+            .active {
+                display: inline-block;
+
+                background: linear-gradient(180deg, transparent 90%, #D33682 80%);
+                color: var(--h3-color);
+            }
+        }
+
+
+        .sobre {
+            color: #9F294C;
+
+            &:hover {
+                color: var(--text-color);
+            }
+
+            &:active {
+                color: var(--text-color);
+            }
+
+        }
+    }
+}
+
+.about-container {
+    display: block;
+    padding: 16px 0;
+
+}
+
+
+.link_img {
+    &:hover {
+        fill: #002B36;
+
+    }
+}
+
+span .project {
+    display: flex;
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+
+
+}
+
+.project img {
+    width: 400px;
+    height: auto;
+    transition: transform 1s ease;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.project:hover img {
+    transform: scale(1.2);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Grey translucent background */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    text-align: center;
+
+    p {
+        color: white;
+    }
+}
+
+.project:hover .overlay {
+    opacity: 1;
+}
+
+
+
+
+@media (max-width: 1024px) and (min-width: 769px) {
+
+
+    .full-container {
+        padding-left: 16px;
+    }
+
+    .about-container.flex {
+        // display: block;
+        display: flex;
+        align-items: center;
+
+        .project {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__p {
+                padding-left: 16px;
+            }
+
+            &__h {
+                padding-left: 16px;
+            }
+
+        }
+    }
+
+    .navbar {
+        width: 28vw;
+    }
+
+    .main-content {
+        margin-left: 28vw;
+    }
+
+    span .project {
+        width: 200px;
+        height: 125px;
+
+
+        img {
+            width: 200px;
+            height: 125px;
+        }
+    }
+
+    .project img {
+        width: 200px;
+        height: auto;
+        transition: transform 1s ease;
+        overflow: hidden;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 768px) {
+   
+
+    .navbar {
+        height: 100%;
+        /* Full viewport height */
+        overflow-y: auto;
+        /* Add scrollbar if needed */
+        position: relative;
+        /* Fixes the navbar to the left side */
+        /* Ensure it's on top of other content */
+        width: 100vw;
+        background-color: var(--bg-color);
+        border-right: 0.8px solid var(--margin-color);
+        display: block;
+        justify-content: center;
+        // margin: 20px 20px 20px 20px;
+        // border-radius: 16px;
+
+        &-nav {
+            width: 100vw;
+        }
+    }
+
+    .web-nav {
+        display: none;
+    }
+
+    .main-content {
+        padding: 0;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .nav-item {
+        text-align: center;
+    }
+
+    .full-container {
+        padding: 0 16px;
+    }
+
+    .about-container {
+        display: block !important;
+    }
+
+    .links.theme-toggle {
+        width: 60%;
+        margin: auto;
+    }
+
+
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+        position: relative;
+    }
+
+    .topnav #myLinks {
+        display: none;
+    }
+
+
+
+    .icon {
+        display: block;
+        position: fixed;
+        right: 24px;
+        top: 10px;
+        z-index: 100;
+    }
+
+
+    .active {
+        background-color: #04AA6D;
+        color: white;
+    }
+}
