@@ -435,6 +435,7 @@ span .project {
     .topnav {
         overflow: hidden;
         background-color: #333;
+        display: block;
         position: relative;
     }
 
@@ -446,7 +447,7 @@ span .project {
 
     .icon {
         display: block;
-        position: relative;
+        position: fixed;
         right: 24px;
         top: 10px;
         z-index: 100;
