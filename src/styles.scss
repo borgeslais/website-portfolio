@@ -436,7 +436,7 @@ span .project {
         overflow: hidden;
         background-color: #333;
         display: block;
-        position: relative;
+        position: relative !important;
     }
 
     .topnav #myLinks {
